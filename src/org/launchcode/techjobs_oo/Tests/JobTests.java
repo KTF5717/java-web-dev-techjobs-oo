@@ -39,5 +39,18 @@ public class JobTests {
                 new CoreCompetency("Persistence"));
         assertFalse(job.equals(jobTwo));
     }
+    @Test
+    public void testToStringMethod() {
+        Job job = new Job("Product tester", new Employer("ACME"),
+                new Location("Desert"), new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        Job jobTwo = new Job();
+        assertEquals(job.toString(), "\nID: " + job.getId() + "\nName: Product tester\nEmployer: ACME\n" +
+                "Location: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n");
+        assertEquals(jobTwo.toString(), "\nID: " + jobTwo.getId() + "\nName: Data not available\nEmployer: Data not available\n" +
+                "Location: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n");
+
+
+    }
 
 }
